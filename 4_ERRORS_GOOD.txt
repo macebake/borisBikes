@@ -1,0 +1,31 @@
+4_ERRORS_GOOD.txt
+
+irb(main):001:0> require 'dockingstation.rb'
+LoadError: cannot load such file -- dockingstation.rb
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from (irb):1
+	from /usr/bin/irb:12:in `<main>'
+
+ERROR was because we didn't put "./" in front of dockingstation.rb
+
+irb(main):010:0> require './dockstation.rb'
+LoadError: cannot load such file -- ./dockstation.rb
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from (irb):10
+	from /usr/bin/irb:12:in `<main>'
+
+ERROR was because we tired to require it again we saved changes to dockingstation.rb
+
+irb(main):001:0> require './dockingstation.rb'
+SyntaxError: /Users/maceybaker/Desktop/ruby/dockingstation.rb:3: Can't change the value of self
+		self = Bike.new
+		      ^
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from (irb):1
+	from /usr/bin/irb:12:in `<main>'
+
+ERROR , SYNTAX ERROR, couldn't change value of self. We took self out and left Bike.new, and then it worked!
+
