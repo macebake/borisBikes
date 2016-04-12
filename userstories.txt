@@ -1,0 +1,19 @@
+Objects:
+Person
+Docking Station
+
+Messages:
+--
+release_a_bike
+
+Objects:
+Person
+Bike
+
+Messages:
+--
+check_if_working
+
+Chart:
+person > bike > check_if_working > docking station > release_a_bike
+
