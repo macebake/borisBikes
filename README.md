@@ -1,25 +1,25 @@
-Boris Bikes
+#Boris Bikes
 
 What is it?
 __________________
 
-A program that will run all the Docking Stations, simulate all the Bikes, and emulate all the infrastructure (vans, repair staff, and so on) required to make their dream a reality.
+Boris Bikes is a program which simulates TfL's Santander Cycles docking stations and bikes. Within the program you are able to make a docking station, make multiple bikes, dock and release bikes, and dock but not release broken bikes.
 
 The Latest Version
 __________________
-
+V3
 
 
 Installation
 __________________
-
+n/a
 
 
 
 Contacts
 __________________
-Elia Bardashevich email address : ebardashevich@gmail.com
-Lucy Clarke email address : llcclarke@gmail.com
+Matt Ward: iammatthewward@gmail.com
+Lucy Clarke: llcclarke@gmail.com
 
 
 
