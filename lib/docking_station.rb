@@ -12,7 +12,7 @@ class DockingStation
 
   def release_bike
     fail "No bikes" if empty?
-    fail "No working bikes available" if (@bikes.last).working? == false
+    fail "No working bikes available" if last_bike_broken?
     @bikes.pop
   end
 
@@ -29,6 +29,10 @@ private
 
   def empty?
     @bikes.empty?
+  end
+
+  def last_bike_broken?
+    @bikes.last.working? == false
   end
 
 end
