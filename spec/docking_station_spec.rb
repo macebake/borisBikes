@@ -37,5 +37,11 @@ describe DockingStation do
       5.times {dock5.dock(Bike.new)}
       expect {dock5.dock(Bike.new)}.to raise_error("Docking Station full")
     end
+
+    it "sets the capacity to DEFAULT_CAPACITY if user does not specify capacity" do
+      default_dock = DockingStation.new
+      DockingStation::DEFAULT_CAPACITY.times {default_dock.dock(Bike.new)}
+      expect {default_dock.dock(Bike.new)}.to raise_error("Docking Station full")
+    end
   end
 end
