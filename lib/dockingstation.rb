@@ -18,7 +18,7 @@ class DockingStation
       raise "no bikes available"
     end
     @bikes.each do |bike|
-      if bike.broken?
+      if bike.broken? == false
         return bike
       else
         raise "no working bikes"

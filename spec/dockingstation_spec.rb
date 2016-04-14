@@ -1,4 +1,5 @@
 require "dockingstation"
+
  describe DockingStation do
    it 'expects capacity to equal user input or 20' do
      expect(subject.capacity).to eq 20
@@ -11,19 +12,25 @@ require "dockingstation"
       expect{subject.release_bike}.to raise_error ("no bikes available")
     end
 
+    let(:bike) { double(:bike) }
     it 'raises an error when no bikes are working' do
-      station = DockingStation.new
-      bike = Bike.new
-      bike = bike.report_broken
-      station.dock(bike)
-      expect{station.release_bike}.to raise_error ("no working bikes")
+      bike = double(:bike)
+      allow(bike).to receive(:broken?).and_return(true)
+      subject.dock(bike)
+      expect{subject.release_bike}.to raise_error ("no working bikes")
+    end
+
+    it 'releases working bikes' do
+      allow(bike).to receive(:broken?).and_return(false)
+      subject.dock(bike)
+      expect(subject.release_bike).not_to be_broken
     end
 
     end
     describe '#dock' do
       it 'raises an error when there are no docks available' do
-        DockingStation::DEFAULT_CAPACITY.times {subject.dock(Bike.new)}
-        expect{subject.dock(Bike.new)}.to raise_error ("no docks available")
+        DockingStation::DEFAULT_CAPACITY.times {subject.dock(double(:bike))}
+        expect{subject.dock(double(:bike))}.to raise_error ("no docks available")
       end
     end
   end
