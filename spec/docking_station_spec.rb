@@ -30,4 +30,12 @@ describe DockingStation do
       expect {subject.dock(Bike.new)}.to raise_error("Docking Station full")
     end
   end
+
+  describe '#intialize' do
+    it "allows user to set capacity when creating a new docking station" do
+      dock5 = DockingStation.new(5)
+      5.times {dock5.dock(Bike.new)}
+      expect {dock5.dock(Bike.new)}.to raise_error("Docking Station full")
+    end
+  end
 end
