@@ -31,6 +31,10 @@ class DockingStation
     full? ? (raise "no docks available") : (@bikes << bike)
   end
 
+  def to_repair
+  end
+
+
   private
   def empty?
     (@bikes.empty?)? true : false
