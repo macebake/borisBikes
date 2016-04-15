@@ -11,4 +11,10 @@ describe Van do
     expect(subject.pickup_broken_bikes(station)).to eq(bike)
   end
 
+  it "raises exception if no bikes in docking station" do
+  expect {subject.pickup_broken_bikes(station)}.to raise_error("No bikes")
 end
+
+end
+
+
