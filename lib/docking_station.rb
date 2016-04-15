@@ -27,7 +27,7 @@ class DockingStation
   end
 
   def end_with_working
-    (@bikes).sort_by {|x| [x.working? ? 1 : 0, x:@bikes]}
+    @bikes = (@bikes).sort_by {|x| [x.working? ? 1 : 0, x:@bikes]}
   end
   def bikes
     @bikes
