@@ -1,4 +1,5 @@
 require_relative 'bike'
+require_relative 'ven'
 
 class DockingStation
   DEFAULT_CAPACITY = 20
@@ -13,7 +14,11 @@ class DockingStation
   def release_bike
     fail "No bikes" if empty?
     fail "No working bikes available" if last_bike_broken?
-        end_with_working.pop
+    end_with_working.pop
+  end
+
+  def pickup_bike
+
   end
 
   def dock(bike)
