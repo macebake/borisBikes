@@ -13,12 +13,16 @@ class DockingStation
   def release_bike
     fail "No bikes" if empty?
     fail "No working bikes available" if last_bike_broken?
-    @bikes.pop
+        end_with_working.pop
   end
 
   def dock(bike)
     fail "Docking Station full" if full?
     @bikes << bike
+  end
+
+  def end_with_working
+    (@bikes).sort_by {|x| [x.working? ? 1 : 0, x:@bikes]}
   end
 
 private
@@ -32,7 +36,9 @@ private
   end
 
   def last_bike_broken?
-    @bikes.last.working? == false
+    end_with_working.last.working? == false
   end
+
+
 
 end
