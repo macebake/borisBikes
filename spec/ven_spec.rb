@@ -12,9 +12,8 @@ describe Van do
   end
 
   it "raises exception if no bikes in docking station" do
+    station = DockingStation.new
   expect {subject.pickup_broken_bikes(station)}.to raise_error("No bikes")
-end
+  end
 
 end
-
-
